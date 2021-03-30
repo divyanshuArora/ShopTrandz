@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data class="CategoriesItemBind" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainCategoryCardView"
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="@dimen/_145sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:contentPadding="0dp"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardPreventCornerOverlap="false"
+        card_view:cardUseCompatPadding="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/categoryImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="15"
+                android:scaleType="fitXY"
+                android:src="@drawable/dummy_image" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:alpha="0.7"
+                android:background="#353535" />
+
+
+            <TextView
+                android:id="@+id/categoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="2"
+                android:text="Shopping"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_11ssp" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
