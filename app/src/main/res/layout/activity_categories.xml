@@ -8,51 +8,71 @@
     tools:context=".activities.CategoriesActivity">
 
 
-    <EditText
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@drawable/custom_search_box"
-        android:drawableStart="@drawable/ic_search"
-        android:hint=" Search"
-        android:padding="@dimen/_8sdp"
-        android:textSize="@dimen/_14ssp" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/searchCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/custom_search_box"
+                android:drawableStart="@drawable/ic_search"
+                android:hint=" Search"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14ssp" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Top Categories"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:textColor="#000000"
-        android:textSize="@dimen/_12ssp"
-        android:textStyle="bold"
-        android:fontFamily="@font/roboto_bold"
-        />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Top Categories"
+                android:textColor="#000000"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryRecyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1" />
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:text="Add Shop"
-        android:background="#F57F17"
-        android:textSize="@dimen/_12ssp"
-        android:visibility="gone"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginVertical="@dimen/_5sdp"
-        android:textColor="#ffffff"
-        />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbarCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="#E65100"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/noDataFoundCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data Found!!"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="#000000"
+            android:visibility="gone"
+            android:fontFamily="@font/roboto_bold"
+            />
 
 
 
+    </FrameLayout>
 </LinearLayout>

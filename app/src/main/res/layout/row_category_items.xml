@@ -3,7 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
 
-    <data class="CategoriesItemBind" />
+    <data class="CategoriesItemBind">
+        
+        <variable
+            name="CategoriesModel"
+            type="com.techoniq.shoptrandz.retrofit.model.CategoriesData" />
+        
+    </data>
+    
 
     <androidx.cardview.widget.CardView
         android:id="@+id/mainCategoryCardView"
@@ -28,6 +35,7 @@
                 android:layout_height="match_parent"
                 android:alpha="15"
                 android:scaleType="fitXY"
+                setImageFromUrl="@{CategoriesModel.categoryImage}"
                 android:src="@drawable/dummy_image" />
 
 
@@ -48,7 +56,7 @@
                 android:layout_marginBottom="@dimen/_8sdp"
                 android:fontFamily="@font/roboto_bold"
                 android:maxLines="2"
-                android:text="Shopping"
+                android:text="@{CategoriesModel.categoryName}"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/_11ssp" />
         </FrameLayout>

@@ -9,8 +9,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
         <com.jsibbold.zoomage.ZoomageView
             android:id="@+id/fullScreenImageItem"
             android:layout_width="match_parent"

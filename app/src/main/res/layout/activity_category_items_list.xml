@@ -12,48 +12,76 @@
         android:layout_height="@dimen/_170sdp"
         android:gravity="center"
         android:orientation="vertical">
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
+                android:id="@+id/catImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="10"
+                android:alpha="12"
                 android:scaleType="fitXY"
-                android:src="@drawable/dummy_image" />
+                />
+
             <TextView
+                android:id="@+id/catTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/category_title_back_shape"
-                android:backgroundTint="#25FFFDFD"
+                android:fontFamily="@font/roboto_bold"
                 android:paddingHorizontal="@dimen/_50sdp"
                 android:paddingVertical="@dimen/_10sdp"
-                android:text="Restaurant"
+                android:text=""
                 android:textColor="#D3FFFFFF"
-                android:textSize="@dimen/_14ssp"
-                android:fontFamily="@font/roboto_bold" />
+                android:alpha="0.7"
+                android:textSize="@dimen/_14ssp" />
         </FrameLayout>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/totalShopCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="128 Places"
-        android:layout_margin="@dimen/_5sdp"
-        android:textSize="@dimen/_12ssp"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text=""
         android:textColor="#000000"
-        android:fontFamily="@font/roboto_bold"
-        />
+        android:textSize="@dimen/_12ssp" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/categoryItemsList"
-        android:layout_marginHorizontal="@dimen/_5sdp"
-        />
+        android:layout_height="match_parent">
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryItemsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/noDataFound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="No Data Found!!"
+            android:textColor="#000000"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone" />
 
 
+        <ProgressBar
+            android:id="@+id/progressCatItemList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_95sdp"
+            android:indeterminateTint="#E65100" />
+    </FrameLayout>
 </LinearLayout>

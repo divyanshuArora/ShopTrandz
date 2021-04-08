@@ -2,7 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
-    <data class="CategoryItemListBind" />
+    <data class="CategoryItemListBind">
+        <variable
+            name="ShopDataModel"
+            type="com.techoniq.shoptrandz.retrofit.model.ShopDetailsData" />
+    </data>
     <androidx.cardview.widget.CardView
         android:id="@+id/categoryItemListCard"
         android:layout_width="match_parent"
@@ -11,58 +15,49 @@
         android:orientation="vertical"
         app:cardBackgroundColor="#ffffff"
         app:cardCornerRadius="@dimen/_5sdp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <ImageView
+                android:id="@+id/imgShop"
                 android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_height="@dimen/_85sdp"
                 android:padding="@dimen/_5sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/dummy_image" />
-
+                android:scaleType="fitXY" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Infinity Restaurant &amp; Coffee Cafe"
-                    android:textColor="#000000"
                     android:fontFamily="@font/roboto_bold"
-                    android:textSize="@dimen/_11sdp"
-                    />
-
+                    android:text="@{ShopDataModel.shopName}"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_11sdp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="horizontal">
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_location" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_10sdp"
-                        android:gravity="center_vertical"
-                        android:text="Sanskriti Tower, 7th Floor Bombay Motor, Near new kohinoor"
-                        android:textColor="#3A3737"
                         android:fontFamily="@font/roboto_regular"
-                        android:textSize="@dimen/_8sdp" />
+                        android:gravity="center_vertical"
+                        android:text="@{ShopDataModel.shopAddress}"
+                        android:textColor="#3A3737"
+                        android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -71,27 +66,23 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/ratingBar"
                         style="@style/Widget.AppCompat.RatingBar.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:numStars="5"
                         android:progressTint="#FF6F00"
-                        android:rating="3"
-                        android:stepSize="5" />
-
+                        android:stepSize="1" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
-                        android:text="4.7"
                         android:fontFamily="@font/roboto_regular"
+                        android:text="@{ShopDataModel.shopRating}"
                         android:textColor="#3A3737"
                         android:textSize="@dimen/_9ssp" />
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>

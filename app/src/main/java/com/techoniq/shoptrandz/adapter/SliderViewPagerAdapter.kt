@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.techoniq.shoptrandz.R
 import com.techoniq.shoptrandz.activities.CategoryItemsListActivity
@@ -32,6 +33,7 @@ class SliderViewPagerAdapter(var activity: Activity, var arrayList: ArrayList<St
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(arrayList[position])
+        Glide.with(activity).load("https://shoptrandz.com/"+arrayList[position]).into(holder.itemBind.sliderImage)
     }
 
     class ItemViewHolder(var itemBind: SliderViewPagerItemBind) :

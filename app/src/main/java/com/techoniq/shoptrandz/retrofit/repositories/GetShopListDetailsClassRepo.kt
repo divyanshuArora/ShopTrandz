@@ -1,27 +1,28 @@
 package com.techoniq.shoptrandz.retrofit.repositories
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.techoniq.shoptrandz.retrofit.ApiInterface
-import com.techoniq.shoptrandz.retrofit.model.CategoriesResponse
+import com.techoniq.shoptrandz.retrofit.model.ShopListDetailsResponse
+import com.techoniq.shoptrandz.retrofit.requests.ShopDetailsListRequest
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 
-
-class GetCategoriesClassRepo {
+class GetShopListDetailsClassRepo {
     companion object GetCategoriesClass {
-        fun getInstance(): GetCategoriesClassRepo {
-            return GetCategoriesClassRepo()
+        fun getInstance(): GetShopListDetailsClassRepo {
+            return GetShopListDetailsClassRepo()
         }
     }
 
 
-    fun getCategoriesData(): LiveData<CategoriesResponse> {
-        val data = MutableLiveData<CategoriesResponse>()
-
-        ApiInterface.create().getData()
+    @SuppressLint("CheckResult")
+    fun getShopListDetails(selectedCatId: ShopDetailsListRequest): LiveData<ShopListDetailsResponse> {
+        val data = MutableLiveData<ShopListDetailsResponse>()
+        ApiInterface.create().getShopDetails(selectedCatId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.techoniq.shoptrandz.R
 import com.techoniq.shoptrandz.activities.CategoryItemDetailsActivity
 import com.techoniq.shoptrandz.activities.CategoryItemsListActivity
@@ -35,6 +36,8 @@ class FullScreenImageAdapter(var activity: Activity, var arrayList: ArrayList<St
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(arrayList[position])
+
+        Glide.with(activity).load("https://shoptrandz.com/"+arrayList[position]).into(holder.itemBind.fullScreenImageItem)
     }
 
     class ItemViewHolder(var itemBind: FullScreenItemBind) :
